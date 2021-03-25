@@ -40,4 +40,5 @@ for i in tqdm(range(page, last_page+1)):
 # Create File
 with open(f'{source_lang_code}-{target_lang_code}.dict', 'w+') as f:
     for a, b in word_list:
-        print(f'{a}\t{b}', file=f)
+        if len(b.strip())>0:
+            print(f'{a}\t{b}', file=f)
